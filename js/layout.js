@@ -87,8 +87,15 @@ class Layout {
     clearMessageError() {
 
         const CURRENT_ALERT = document.querySelector(".alert")
-        if(CURRENT_ALERT) {
+        if (CURRENT_ALERT) {
             CURRENT_ALERT.remove()
+        }
+    }
+
+    clearProfile() {
+
+        while (this.profileSection.firstChild) {
+            this.profileSection.removeChild(this.profileSection.firstChild)
         }
     }
 }
