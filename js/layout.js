@@ -37,4 +37,34 @@ class Layout {
         `
     }
 
+    showRepository(repos) {
+
+        let output = ''
+
+        repos.forEach(repo => {
+            output += `
+            <div class="repository-title">
+                <h3>Repositorios</h3>
+            </div>
+            <div class="repository-information">
+                <div class="repository-name">
+                    <p>zxventures</p>
+                </div>
+                <div class="repository-stars">
+                    <p>star: 3</p>
+                </div>
+                <div class="repository-description">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Cupiditate saepe neque ea ducimus, cum odio.</p>
+                </div>
+                <div class="repository-link">
+                    <p>https://github.com/gregoryls1/apicriptomoeda</p>
+                </div>
+            </div>
+            `
+        })
+
+        document.querySelector("#repository") = output
+    }
+
 }
