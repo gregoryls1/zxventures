@@ -156,6 +156,7 @@ body {
 .repository {
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     margin-top: 10px;
 }
@@ -164,4 +165,42 @@ body {
     font-size: 20px;
     font-weight: bold;
     color: white;
+    margin: 10px;
+}
+
+.repository-information {
+    width: 90%;;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background: black;
+    border-radius: 10px;
+    margin: 5px;
+    color: white;
+}
+
+.repository-name {
+    color: #4c6d45;
+    font-weight: bold;
+    font-size: 17px;
+    margin: 12px;
+}
+
+.repository-stars {
+    font-size: 12px;
+    padding: 3px;
+    margin: 12px;
+    background-color: #4d5d9a;
+    border-radius: 5px;
+}
+
+.repository-description {
+    font-size: 14px;
+    text-align: center;
+}
+
+.repository-link {
+    font-size: 12px;
+    text-align: center;
+    padding: 10px;   
 }
