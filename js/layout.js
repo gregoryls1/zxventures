@@ -67,4 +67,28 @@ class Layout {
         document.querySelector("#repository") = output
     }
 
+    showMessageError() {
+
+        this.clearMessageError()
+
+        let alertDiv = document.createElement("div")
+
+        alertDiv.classList.add("alert", "alert-danger")
+
+        alertDiv.append("Usuário não existe!")
+
+        const CONTAINER_TITLE = document.querySelector(".container-title")
+
+        CONTAINER_TITLE.insertBefore(alertDiv, CONTAINER_TITLE.firstElementChild)
+
+        setTimeout(this.clearMessageError, 2000)
+    }
+
+    clearMessageError() {
+
+        const CURRENT_ALERT = document.querySelector(".alert")
+        if(CURRENT_ALERT) {
+            CURRENT_ALERT.remove()
+        }
+    }
 }
