@@ -4,6 +4,7 @@ body {
     background: url(./../assets/bg-main.jpg);
     background-size: cover;
     font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
 }
 
 .menubar {
@@ -79,7 +80,7 @@ body {
 }
 
 #profile {
-    widows: 100%;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -186,13 +187,16 @@ body {
 }
 
 .repository-name {
+    width: 150px;
     color: #4c6d45;
     font-weight: bold;
-    font-size: 17px;
+    font-size: 14px;
     margin: 12px;
 }
 
 .repository-stars {
+    width: 50px;
+    text-align: center;
     font-size: 12px;
     padding: 3px;
     margin: 12px;
@@ -200,16 +204,32 @@ body {
     border-radius: 5px;
 }
 
+.repository-language {
+    width: 140px;
+    text-align: center;
+    font-size: 12px;
+    padding: 3px;
+    margin: 12px;
+    background-color: #7a4a41;
+    border-radius: 5px;
+}
+
 .repository-description {
+    width: 80%;
     font-size: 14px;
     text-align: center;
     padding: 5px;
-}
+}   
 
 .repository-link {
-    font-size: 12px;
+    font-size: 10px;
     text-align: center;
     padding: 10px;   
+}
+
+.repository a {
+    text-decoration: none;
+    color: white;
 }
 
 .footer {
@@ -223,6 +243,7 @@ body {
     font-size: 14px;
     margin-top:20px;
 }
+
 
 @media(min-width: 768px) {
 
@@ -249,15 +270,15 @@ body {
     }
 
     .profile {
-        width: 90%;
+        width: 550px;
         display: flex;
         flex-wrap: wrap;
+        justify-content: space-around;
         align-items: center;
     }
     
     .profile-avatar {
-        width: 35%;
-        margin-left: 5%;
+        width: 50%;
     }
     
     .profile-avatar img{
@@ -266,7 +287,7 @@ body {
     }
     
     .profile-avatar h3 {
-        font-size: 35px;
+        font-size: 30px;
     }  
 
     .profile-information {
@@ -280,6 +301,10 @@ body {
 }
 
 @media(min-width: 992px) {
+
+    .profile {
+        width: 750px;
+    }
 
     .container-title {
         width: 68%;

@@ -10,61 +10,57 @@ class Layout {
         this.profileSection.innerHTML = `
             <div class="profile">
             <div class="profile-avatar">
-                <img src="./assets/download.png" alt="">
-                <h3>Gregory Lima</h3>
+                <img src=${user.avatar_url} alt="">
+                <h3>${user.name == null ? 'Sem nome' : user.name}</h3>
                 <div class="profile-follow">
                     <div class="profile-followers">
-                        <p>Followers: 0</p>
+                        <p>Followers: ${user.followers}</p>
                     </div>
                     <div class="profile-followings">
-                        <p>Followings: 2</p>
+                        <p>Followings: ${user.following}</p>
                     </div>
                 </div>
             </div>
             <div class="profile-information">
                 <div class="profile-bio">
-                    <p><span>Bio:</span> Lorem, ipsum dolor sit amet consectetur
-                        adipisicing elit. Dolores similique repudiandae
-                        impedit deserunt rem reprehenderit repellat dolorem
-                        libero commodi doloremque.</p>
+                    <p><span>Bio:</span> ${user.bio == null ? 'Sem bio' : user.bio}</p>
                 </div>
                 <div class="profile-email">
-                    <p><span>Email:</span> contatogregory@gmail.com</p>
+                    <p><span>Email:</span> ${user.email == null ? 'Sem e-mail' : user.email}</p>
                 </div>
             </div>
         </div>
-        <div class="repository" id="repository"></div>
         `
     }
 
-    showRepository(repos) {
+    showRepository(repository) {
 
         let output = ''
 
-        repos.forEach(repo => {
+        repository.forEach(repo => {
             output += `
-            <div class="repository-title">
-                <h3>Repositorios</h3>
-            </div>
             <div class="repository-information">
                 <div class="repository-name">
-                    <p>zxventures</p>
+                    <p>${repo.name}</p>
                 </div>
                 <div class="repository-stars">
-                    <p>star: 3</p>
+                    <p>star: ${repo.stargazers_count}</p>
+                </div>
+                <div class="repository-language">
+                    <p>linguagem: ${repo.language}</p>
                 </div>
                 <div class="repository-description">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Cupiditate saepe neque ea ducimus, cum odio.</p>
+                    <p>${repo.description === null ? 'Repositorio sem descrição' : repo.description}
+                    </p>
                 </div>
                 <div class="repository-link">
-                    <p>https://github.com/gregoryls1/apicriptomoeda</p>
+                    <a href="${repo.html_url}" target="_blank"><p>${repo.html_url}</p></a>
                 </div>
             </div>
             `
         })
 
-        document.querySelector("#repository") = output
+        document.querySelector("#repository").innerHTML = output
     }
 
     showMessageError() {
